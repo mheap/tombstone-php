@@ -19,7 +19,8 @@ class File extends Reporter
 
     public function emit($date, $author)
     {
-        $data = $this->getCurrentTime().PHP_EOL.$date.PHP_EOL.$author.PHP_EOL.$this->getCurrentLocation().PHP_EOL.PHP_EOL;
+        $data = $this->getCurrentTime().PHP_EOL.$date.PHP_EOL;
+        $data .= $author.PHP_EOL.$this->getCurrentLocation().PHP_EOL.PHP_EOL;
         file_put_contents($this->filePath, $data, FILE_APPEND);
     }
 }

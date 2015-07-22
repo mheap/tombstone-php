@@ -50,6 +50,4 @@ class MemoryTest extends \PHPUnit_Framework_TestCase
         $t->register(null, null);
         $this->assertTrue($t->shouldTrigger());
     }
-
-
 }

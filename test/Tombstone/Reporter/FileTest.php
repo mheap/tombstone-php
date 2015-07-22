@@ -25,7 +25,11 @@ class FileTest extends \PHPUnit_Framework_TestCase
     {
         $this->tempFile = tempnam("/tmp", "tombstone_test");
 
-        $reporter = $this->getMock("\\Tombstone\\Reporter\\File", array("getCurrentLocation", "getCurrentTime"), array($this->tempFile));
+        $reporter = $this->getMock(
+            "\\Tombstone\\Reporter\\File",
+            array("getCurrentLocation", "getCurrentTime"),
+            array($this->tempFile)
+        );
         $reporter->method('getCurrentLocation')
                   ->willReturn(
                       '#0 /home/michael/tombstone-php/src/Tombstone/Reporter/File.php(19):'.

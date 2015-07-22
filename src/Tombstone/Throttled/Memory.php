@@ -9,7 +9,7 @@ class Memory extends \Tombstone\Throttled
 
     public function shouldTrigger()
     {
-        if (time() >= ($this->lastTriggerTime + $this->getThrottleTime())){
+        if (time() >= ($this->lastTriggerTime + $this->getThrottleTime())) {
             return true;
         }
 
@@ -21,5 +21,3 @@ class Memory extends \Tombstone\Throttled
         $this->lastTriggerTime = time();
     }
 }
-
-

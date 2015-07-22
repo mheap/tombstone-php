@@ -11,6 +11,7 @@ class Memory extends Reporter
 
         public function emit($date, $author)
         {
-                $this->entries[] = $this->getCurrentTime().PHP_EOL.$date.PHP_EOL.$author.PHP_EOL.$this->getCurrentLocation().PHP_EOL.PHP_EOL;
+                $this->entries[] = $this->getCurrentTime().PHP_EOL.$date.PHP_EOL.$author.PHP_EOL.
+                                   $this->getCurrentLocation().PHP_EOL.PHP_EOL;
         }
 }

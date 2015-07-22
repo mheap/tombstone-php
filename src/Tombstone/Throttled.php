@@ -21,8 +21,9 @@ class Throttled extends Tombstone
     public function register($date, $author)
     {
         if ($this->shouldTrigger()) {
+            $result = parent::register($date, $author);
             $this->updateThrottle();
-            return parent::register($date, $author);
+            return $result;
         }
     }
 
@@ -31,5 +32,3 @@ class Throttled extends Tombstone
         return $this->throttleTime;
     }
 }
-
-
